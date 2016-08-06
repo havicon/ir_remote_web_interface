@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Register</title>
+</head>
+<body>
+  <input type="text" name="name" id="name">
+  <input type="button" id="greet" value="Greet!">
+  <div id="result"></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+    $(function() {
+      $('.all_light').click(function(){
+        $.get('ir_send.php', {
+          name: $('#name').val()
+        }, function(data) {
+          $('#result').html(data);
+        });
+      });
+      $('#dark_light').click(function(){
+        $('.forgever').css('display', 'none');
+      });
+      $('#extinction').click(function(){
+        $('.forgever').css('display', 'none');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "auth_service": "google",
+    "username": "jp.harikae@gmail.com",
+    "password": "E05118shouta",
+    "location": "35.7912647,139.4645249",
+    "gmapkey": "AIzaSyBrsQVLbmcHCJ12U20bkZmyJ-cHetFYNXo",
+    "max_steps": 5,
+    "mode": "all",
+    "walk": 4.16,
+    "debug": false,
+    "test": false,
+    "initial_transfer": 0,
+    "location_cache": true,
+    "distance_unit": "km",
+    "item_filter": "101,102,103,104",
+    "evolve_all": "NONE"
+}

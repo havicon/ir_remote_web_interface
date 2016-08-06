@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Private Service" />
   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
   <style type="text/css">
   .nav-tabs {
     overflow-x: auto;
@@ -45,17 +44,17 @@
       <div class="tab-content">
         <div class="tab-pane active" id="tab1">
           <h4>Home</h4>
-          <button type="button" class="btn btn-default">在宅モード</button>
-          <button type="button" class="btn btn-primary">留守番モード</button>
-          <button type="button" class="btn btn-success">おやすみモード</button>
+          <button id="home_mode" type="button" class="btn btn-default">Home Mode</button>
+          <button id="absence_mode" type="button" class="btn btn-primary">Absence Mode</button>
+          <button id="do_not_disturb" type="button" class="btn btn-success">Do Not Disturb</button>
           <h4>Room lights</h4>
           <div class="btn-group btn-group-lg" role="group" aria-label="roomlight">
-            <button type="button" class="btn btn-default">消灯</button>
-            <button type="button" class="btn btn-default">全灯</button>
-            <button type="button" class="btn btn-default">暗灯</button>
+            <button id="all_light" type="button" class="btn btn-default">All Lights</button>
+            <button id="dark_light" type="button" class="btn btn-default">Dark Light</button>
+            <button id="extinction" type="button" class="btn btn-default">Extinction</button>
           </div>
           <h4>Working Appliances</h4>
-
+          <div id="result"></div>
 
         </div>
         <div class="tab-pane" id="tab2">
@@ -65,7 +64,24 @@
     </div>
   </div>
 
-  <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type='text/javascript' src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+    $(function() {
+      $('#all_light').click(function(){
+        $.get('test.php', {
+          name: "test01"
+        }, function(data) {
+          $('#result').html(data);
+        });
+      });
+      $('#dark_light').click(function(){
+        $('.forgever').css('display', 'none');
+      });
+      $('#extinction').click(function(){
+        $('.forgever').css('display', 'none');
+      });
+    });
+  </script>
 </body>
 </html>

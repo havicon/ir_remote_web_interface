@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Register</title>
+</head>
+<body>
+
+  <style>
+  .forgever{
+    display: none;
+  }
+  </style>
+
+  <form name="regster" method="POST" action="/cgi-bin/reg.py">
+  <p>サーバー名:
+    <input type="text" size="30" name="name"></p>
+  <p>Minecraftバージョン：
+    <select name="vertion">
+      <option value="1.8.8">1.8.8</option>
+      <option value="1.8.7">1.8.7</option>
+      <option value="1.8.6">1.8.6</option>
+      <option value="1.8.5">1.8.4</option>
+      <option value="1.8.4">1.8.4</option>
+      <option value="1.8.3">1.8.3</option>
+      <option value="1.8.2">1.8.2</option>
+      <option value="1.8.1">1.8.1</option>
+      <option value="1.8">1.8</option>
+      <option value="1.">1.</option>
+      <option value="1.">1.</option>
+      <option value="1.">1.</option>
+      <option value="1.">1.</option>
+      <option value="1.8">1.8</option>
+      <option value="1.7.10" selected>1.7.10</option>
+      <option value="1.6.4">1.6.4</option>
+    </select>
+  </p>
+  <p>サーバータイプ:
+    <input id="vanilla" type="radio" name="stype" value="">Vanilla
+    <input id="forge" type="radio" name="stype" value="">Forge
+    <input id="spigot" type="radio" name="stype" value="">Spigot
+  </p>
+  <div class="all_light">
+    <p>Forgeバージョン:
+      <select name="vertion">
+      <option value="11.14.4.1577">1.8 - 11.14.4.1577</option>
+      <option value="10.13.4.1614" selected>1.7.10 - 10.13.4.1614</option>
+      <option value="11.15.1.1902">1.8.8 - 11.15.1.1902</option>
+      </select>
+    </p>
+  </div>
+  <p>管理者ユーザー名:
+    <input type="text" size="30" name="op">
+  </p>
+  <input type="submit" value="submit" name="button">
+  </form>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+    $(function() {
+      $('.all_light').click(function(){
+        $.get('ir_send.php', {
+          name: "all_light";
+        }, function(data) {
+          $('#respons').html(data);
+        });
+      });
+      $('#dark_light').click(function(){
+        $('.forgever').css('display', 'none');
+      });
+      $('#extinction').click(function(){
+        $('.forgever').css('display', 'none');
+      });
+    });
+  </script>
+</body>
+</html>
